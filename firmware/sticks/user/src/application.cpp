@@ -4,9 +4,15 @@
 
 SYSTEM_MODE(SEMI_AUTOMATIC)
 
-bool FLASH_WriteProtectMemory(flash_device_t flashDeviceID, uint32_t startAddress, uint32_t length, bool protect);
-
 void setup()
 {
+    WiFi.setCredentials("nodebotanist-tessel-hub", "AceIsSuperCool");
     WiFi.connect();
+    WiFi.useDynamicIP();
+
+    Udp.start(88888);
+}
+
+void loop(){
+    
 }
